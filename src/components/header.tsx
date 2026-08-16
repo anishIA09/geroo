@@ -44,7 +44,11 @@ function useActiveSection() {
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 26, restDelta: 0.001 });
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 26,
+    restDelta: 0.001,
+  });
 
   return (
     <motion.div
@@ -98,7 +102,7 @@ export function Header() {
               className="relative block h-11 w-11 shrink-0 sm:h-12 sm:w-12"
             >
               <Image
-                src="/geroo-logo.jpg"
+                src="/geroo-logo.png"
                 alt=""
                 fill
                 sizes="48px"
@@ -109,6 +113,7 @@ export function Header() {
             <span className="flex flex-col leading-none">
               <span className="font-display text-xl font-semibold tracking-tight text-clay-deep sm:text-2xl">
                 {site.name}
+                <span className="text-xs"> by Archana</span>
               </span>
               <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.22em] text-ink-soft">
                 Since {site.since}
@@ -127,13 +132,19 @@ export function Header() {
                     className={cn(
                       "relative block rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300",
                       "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay",
-                      isActive ? "text-clay-deep" : "text-ink-soft hover:text-clay",
+                      isActive
+                        ? "text-clay-deep"
+                        : "text-ink-soft hover:text-clay",
                     )}
                   >
                     {isActive && (
                       <motion.span
                         layoutId="nav-pill"
-                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 32,
+                        }}
                         className="absolute inset-0 -z-10 rounded-full bg-sand"
                       />
                     )}
@@ -146,7 +157,9 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <motion.a
-              href={whatsappLink(`Hi ${site.name}! I'd like to place an order.`)}
+              href={whatsappLink(
+                `Hi ${site.name}! I'd like to place an order.`,
+              )}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -2 }}
@@ -168,17 +181,23 @@ export function Header() {
             >
               <span className="relative block h-4 w-5">
                 <motion.span
-                  animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+                  animate={
+                    menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }
+                  }
                   transition={{ duration: 0.3, ease: EASE }}
                   className="absolute left-0 top-0 h-0.5 w-5 rounded bg-current"
                 />
                 <motion.span
-                  animate={menuOpen ? { opacity: 0, x: -8 } : { opacity: 1, x: 0 }}
+                  animate={
+                    menuOpen ? { opacity: 0, x: -8 } : { opacity: 1, x: 0 }
+                  }
                   transition={{ duration: 0.2 }}
                   className="absolute left-0 top-[7px] h-0.5 w-5 rounded bg-current"
                 />
                 <motion.span
-                  animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+                  animate={
+                    menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }
+                  }
                   transition={{ duration: 0.3, ease: EASE }}
                   className="absolute left-0 top-[14px] h-0.5 w-5 rounded bg-current"
                 />
@@ -202,7 +221,11 @@ export function Header() {
             <motion.ul
               initial="hidden"
               animate="visible"
-              variants={{ visible: { transition: { staggerChildren: 0.06, delayChildren: 0.08 } } }}
+              variants={{
+                visible: {
+                  transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+                },
+              }}
               className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8"
             >
               {navLinks.map((link) => (
@@ -210,7 +233,11 @@ export function Header() {
                   key={link.href}
                   variants={{
                     hidden: { opacity: 0, x: -16 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: EASE } },
+                    visible: {
+                      opacity: 1,
+                      x: 0,
+                      transition: { duration: 0.4, ease: EASE },
+                    },
                   }}
                 >
                   <a
@@ -233,12 +260,18 @@ export function Header() {
               <motion.li
                 variants={{
                   hidden: { opacity: 0, y: 10 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.4, ease: EASE },
+                  },
                 }}
                 className="mt-2 sm:hidden"
               >
                 <a
-                  href={whatsappLink(`Hi ${site.name}! I'd like to place an order.`)}
+                  href={whatsappLink(
+                    `Hi ${site.name}! I'd like to place an order.`,
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}

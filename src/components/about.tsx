@@ -50,7 +50,10 @@ export function About() {
   return (
     <>
       {/* ── Story ─────────────────────────────────────────── */}
-      <section id="story" className="relative scroll-mt-24 overflow-hidden py-20 sm:py-28">
+      <section
+        id="story"
+        className="relative scroll-mt-24 overflow-hidden py-20 sm:py-28"
+      >
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* Art collage */}
           <Reveal direction="right" className="relative">
@@ -67,7 +70,11 @@ export function About() {
               <motion.div
                 aria-hidden
                 animate={reduce ? undefined : { y: [0, -12, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -bottom-6 -left-8 w-48 opacity-90 sm:w-56"
               >
                 <SamaiArt className="h-full w-full drop-shadow-[0_20px_30px_rgba(123,52,16,0.2)]" />
@@ -78,12 +85,16 @@ export function About() {
                 initial={{ scale: 0.85, opacity: 0, rotate: -6 }}
                 whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.15,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 whileHover={{ scale: 1.04, rotate: 2 }}
-                className="absolute right-6 top-1/2 w-44 -translate-y-1/2 sm:right-10 sm:w-56"
+                className="absolute right-6 top-1/2 w-44 -translate-y-1/2 sm:right-0 sm:w-80"
               >
                 <Image
-                  src="/geroo-logo.jpg"
+                  src="/geroo-logo.png"
                   alt={`${site.name} logo`}
                   width={560}
                   height={560}
@@ -121,14 +132,17 @@ export function About() {
             <Reveal delay={0.1}>
               <div className="mt-6 space-y-5 text-base leading-relaxed text-ink-soft sm:text-lg">
                 <p>
-                  {site.name} began in {site.since} as a creative hobby — a way to spend time doing
-                  something she loved. That craftsmanship and love for making art gradually turned
-                  the hobby into a venture of its own.
+                  {site.name} began in {site.since} as a creative hobby a way to
+                  spend time doing something she loved. That craftsmanship and
+                  love for making art gradually turned the hobby into a venture
+                  of its own.
                 </p>
                 <p>
-                  At the heart of it is a simple belief: handmade pieces have a charm of their own.
-                  Machine-made diyas offer perfect uniformity. {site.name} celebrates the character,
-                  the brush marks and the personal touch that only hand-painted art carries.
+                  At the heart of it is a simple belief: handmade pieces have a
+                  charm of their own. Machine-made diyas offer perfect
+                  uniformity. {site.name} celebrates the character, the brush
+                  marks and the personal touch that only hand-painted art
+                  carries.
                 </p>
               </div>
             </Reveal>
@@ -136,13 +150,17 @@ export function About() {
             <Reveal delay={0.2}>
               <blockquote className="mt-8 border-l-2 border-clay/40 pl-5">
                 <p className="font-script text-2xl leading-snug text-clay-deep sm:text-3xl">
-                  &ldquo;Hand-painted. Made with love. Meant to be reused.&rdquo;
+                  &ldquo;Hand-painted. Made with love. Meant to be
+                  reused.&rdquo;
                 </p>
               </blockquote>
             </Reveal>
 
             {/* Stats */}
-            <Stagger className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4" gap={0.1}>
+            <Stagger
+              className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4"
+              gap={0.1}
+            >
               {stats.map((stat) => (
                 <StaggerItem key={stat.label}>
                   <p className="font-display text-3xl font-semibold text-clay sm:text-4xl">
@@ -173,7 +191,10 @@ export function About() {
             </h2>
           </Reveal>
 
-          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.08}>
+          <Stagger
+            className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            gap={0.08}
+          >
             {values.map((value) => (
               <StaggerItem key={value.title} className="h-full">
                 <motion.div
@@ -195,20 +216,30 @@ export function About() {
                   <h3 className="relative mt-5 font-display text-lg font-semibold text-ink">
                     {value.title}
                   </h3>
-                  <p className="relative mt-2 text-sm leading-relaxed text-ink-soft">{value.body}</p>
+                  <p className="relative mt-2 text-sm leading-relaxed text-ink-soft">
+                    {value.body}
+                  </p>
                 </motion.div>
               </StaggerItem>
             ))}
           </Stagger>
 
-          <Reveal delay={0.15} className="mt-12 flex flex-wrap justify-center gap-2">
-            {["Individual shoppers", "Families", "Weddings & events", "Return gifts", "Corporate gifting", "Bulk orders"].map(
-              (audience) => (
-                <Chip key={audience} className="bg-cream">
-                  {audience}
-                </Chip>
-              ),
-            )}
+          <Reveal
+            delay={0.15}
+            className="mt-12 flex flex-wrap justify-center gap-2"
+          >
+            {[
+              "Individual shoppers",
+              "Families",
+              "Weddings & events",
+              "Return gifts",
+              "Corporate gifting",
+              "Bulk orders",
+            ].map((audience) => (
+              <Chip key={audience} className="bg-cream">
+                {audience}
+              </Chip>
+            ))}
           </Reveal>
         </div>
       </section>

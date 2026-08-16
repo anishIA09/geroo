@@ -42,7 +42,9 @@ function FooterLink({
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">{children}</h3>
+    <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+      {children}
+    </h3>
   );
 }
 
@@ -67,19 +69,23 @@ export function Footer() {
             />
 
             <div className="relative mx-auto max-w-2xl">
-              <p className="font-script text-2xl text-gold sm:text-3xl">Let&rsquo;s make something</p>
+              <p className="font-script text-2xl text-gold sm:text-3xl">
+                Let&rsquo;s make something
+              </p>
               <h2 className="mt-3 font-display text-4xl font-semibold tracking-[-0.02em] text-cream sm:text-5xl">
                 Tell us the occasion. We&rsquo;ll paint the rest.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-cream/70">
-                Diwali, a wedding, return gifts or a corporate hamper — send a message and we&rsquo;ll
-                take it from there.
+                Diwali, a wedding, return gifts or a corporate hamper send a
+                message and we&rsquo;ll take it from there.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
                 <Magnetic>
                   <a
-                    href={whatsappLink(`Hi ${site.name}! I'd like to place an order.`)}
+                    href={whatsappLink(
+                      `Hi ${site.name}! I'd like to place an order.`,
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-cream px-7 py-3.5 text-sm font-semibold text-clay-deep shadow-[0_14px_36px_-14px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-gold active:scale-[0.98]"
@@ -117,7 +123,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cream p-1">
                   <Image
-                    src="/geroo-logo.jpg"
+                    src="/geroo-logo.png"
                     alt=""
                     width={112}
                     height={112}
@@ -125,14 +131,18 @@ export function Footer() {
                   />
                 </span>
                 <div>
-                  <p className="font-display text-2xl font-semibold text-cream">{site.name}</p>
+                  <p className="font-display text-2xl font-semibold text-cream">
+                    {site.name}
+                  </p>
                   <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-cream/50">
                     Since {site.since}
                   </p>
                 </div>
               </div>
 
-              <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/60">{site.meaning}</p>
+              <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/60">
+                {site.meaning}
+              </p>
 
               <div className="mt-6 flex gap-2.5">
                 {[
@@ -223,13 +233,18 @@ export function Footer() {
           {/* Bottom bar */}
           <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-7 text-xs text-cream/45 sm:flex-row">
             <p>
-              &copy; {site.since}&ndash;{new Date().getFullYear()} {site.name}. All rights reserved.
+              &copy; {site.since}&ndash;{new Date().getFullYear()} {site.name}.
+              All rights reserved.
             </p>
             <p className="flex items-center gap-1.5">
               Hand-painted with
               <motion.span
                 animate={{ scale: [1, 1.25, 1] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="text-clay-soft"
               >
                 &hearts;

@@ -10,14 +10,25 @@ import {
   useTransform,
 } from "motion/react";
 import { ProductArt } from "@/components/art";
-import { EASE, Reveal, Stagger, StaggerItem } from "@/components/motion/primitives";
+import {
+  EASE,
+  Reveal,
+  Stagger,
+  StaggerItem,
+} from "@/components/motion/primitives";
 import { Chip, GhostLink, SectionLabel } from "@/components/ui";
 import { orderSteps, products, whatsappLink, type Product } from "@/lib/site";
 
 const SPRING = { stiffness: 220, damping: 20, mass: 0.5 };
 
 /** Card that tips toward the pointer and carries a light glare with it. */
-function TiltCard({ children, className }: { children: ReactNode; className?: string }) {
+function TiltCard({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
@@ -48,7 +59,12 @@ function TiltCard({ children, className }: { children: ReactNode; className?: st
       style={
         reduce
           ? undefined
-          : { rotateX, rotateY, transformPerspective: 1000, transformStyle: "preserve-3d" }
+          : {
+              rotateX,
+              rotateY,
+              transformPerspective: 1000,
+              transformStyle: "preserve-3d",
+            }
       }
       className={className}
     >
@@ -78,18 +94,28 @@ function ProductCard({ product }: { product: Product }) {
             style={{ transform: "translateZ(40px)" }}
             className="relative mx-auto flex h-40 items-center justify-center"
           >
-            <ProductArt art={product.art} className="h-full w-auto max-w-full" />
+            <ProductArt
+              art={product.art}
+              className="h-full w-auto max-w-full"
+            />
           </motion.div>
         </div>
 
         {/* Body */}
         <div className="flex flex-1 flex-col gap-3 p-6">
-          <h3 className="font-display text-xl font-semibold text-ink">{product.name}</h3>
-          <p className="text-sm leading-relaxed text-ink-soft">{product.blurb}</p>
+          <h3 className="font-display text-xl font-semibold text-ink">
+            {product.name}
+          </h3>
+          <p className="text-sm leading-relaxed text-ink-soft">
+            {product.blurb}
+          </p>
 
           <div className="mt-1 flex flex-wrap gap-1.5">
             {product.tags.map((tag) => (
-              <Chip key={tag} className="border-clay/15 bg-sand/70 px-2.5 py-0.5 text-[10px]">
+              <Chip
+                key={tag}
+                className="border-clay/15 bg-sand/70 px-2.5 py-0.5 text-[10px]"
+              >
                 {tag}
               </Chip>
             ))}
@@ -100,7 +126,9 @@ function ProductCard({ product }: { product: Product }) {
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-soft">
                 Price
               </p>
-              <p className="font-display text-lg font-semibold text-clay">{product.price}</p>
+              <p className="font-display text-lg font-semibold text-clay">
+                {product.price}
+              </p>
             </div>
             <a
               href={whatsappLink(product.enquiry)}
@@ -137,12 +165,14 @@ export function Products() {
               Small pieces,{" "}
               <span className="relative inline-block text-clay">
                 painted slowly
-                <span aria-hidden className="absolute inset-x-0 -bottom-1 h-2 rounded-full bg-teal/40" />
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 -bottom-1 h-2 rounded-full bg-teal/40"
+                />
               </span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink-soft sm:text-lg">
-              Festive, abstract or dotted — in acrylic, on clay and MDF. Machine-made décor is
-              uniform; these are not, and that is exactly the point.
+              Festive, abstract or dotted — in acrylic, on clay and MDF.
             </p>
           </Reveal>
 
@@ -154,7 +184,10 @@ export function Products() {
         </div>
 
         {/* Cards */}
-        <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4" gap={0.1}>
+        <Stagger
+          className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+          gap={0.1}
+        >
           {products.map((product) => (
             <StaggerItem key={product.id} className="h-full">
               <ProductCard product={product} />
@@ -180,7 +213,10 @@ export function Products() {
             </h3>
           </Reveal>
 
-          <Stagger className="relative mt-10 grid gap-8 md:grid-cols-3" gap={0.12}>
+          <Stagger
+            className="relative mt-10 grid gap-8 md:grid-cols-3"
+            gap={0.12}
+          >
             {orderSteps.map((step, index) => (
               <StaggerItem key={step.step}>
                 <div className="group relative">
@@ -191,7 +227,11 @@ export function Products() {
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.7, delay: 0.3 + index * 0.15, ease: EASE }}
+                      transition={{
+                        duration: 0.7,
+                        delay: 0.3 + index * 0.15,
+                        ease: EASE,
+                      }}
                       className="absolute left-14 top-6 hidden h-px w-[calc(100%-2.5rem)] origin-left bg-clay/25 md:block"
                     />
                   )}
@@ -202,8 +242,12 @@ export function Products() {
                   >
                     {step.step}
                   </motion.span>
-                  <h4 className="mt-5 font-display text-lg font-semibold text-ink">{step.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+                  <h4 className="mt-5 font-display text-lg font-semibold text-ink">
+                    {step.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                    {step.body}
+                  </p>
                 </div>
               </StaggerItem>
             ))}

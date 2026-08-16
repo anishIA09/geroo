@@ -11,7 +11,7 @@ export const site = {
   since: 2001,
   tagline: "Art that lights up your celebrations.",
   meaning:
-    "Geroo is the warm brown-red earth colour laid on the floor at Diwali — the canvas a rangoli is drawn upon.",
+    "Geroo is the warm brown-red earth colour laid on the floor at Diwali the canvas a rangoli is drawn upon.",
   city: "India", // TODO: the city the studio is based in
   description:
     "Hand-painted clay diyas and MDF rangoli, made one piece at a time in a home studio since 2001. Washable, reusable and endlessly customisable.",
@@ -19,10 +19,10 @@ export const site = {
 
 export const contact = {
   /** TODO: replace with the real number, country code first, digits only. */
-  whatsappNumber: "919999999999",
+  whatsappNumber: "919004610001",
   /** TODO: replace with the real handle. */
-  instagramHandle: "geroo",
-  instagramUrl: "https://instagram.com/geroo",
+  instagramHandle: "geroo_by_archana",
+  instagramUrl: "https://instagram.com/geroo_by_archana",
 } as const;
 
 /** Builds a wa.me deep link with the message pre-typed for the customer. */
@@ -53,27 +53,28 @@ export const products: readonly Product[] = [
     art: "diya",
     name: "Hand-Painted Diyas",
     blurb:
-      "Classic clay diyas finished in acrylic — festive motifs, abstract strokes and dotted work, no two exactly alike.",
+      "Classic clay diyas finished in acrylic festive motifs, abstract strokes and dotted work, no two exactly alike.",
     price: "₹80 – ₹100",
     tags: ["Clay", "Acrylic", "Washable"],
-    enquiry: "Hi Geroo! I'd like to know more about your hand-painted clay diyas.",
+    enquiry:
+      "Hi Geroo! I'd like to know more about your hand-painted clay diyas.",
   },
   {
     id: "samai",
     art: "samai",
-    name: "Samai & Tall Diyas",
+    name: "Samai",
     blurb:
       "Statement standing lamps for the entrance, the pooja corner or the centre of a celebration table.",
     price: "up to ₹300",
     tags: ["Standing", "Statement", "Reusable"],
-    enquiry: "Hi Geroo! I'd like to know more about your samai and tall diyas.",
+    enquiry: "Hi Geroo! I'd like to know more about your samai.",
   },
   {
     id: "rangoli",
     art: "rangoli",
     name: "MDF Rangoli",
     blurb:
-      "Ready-to-place rangoli boards, hand-painted in layers. Lay them out in a minute, wipe them clean, use them every year.",
+      "Ready-to-place rangoli boards, handpainted in layers. Lay them out in a minute, wipe them clean, use them every year.",
     price: "On request",
     tags: ["MDF", "Reusable", "Wipe clean"],
     enquiry: "Hi Geroo! I'd like to know more about your MDF rangoli designs.",
@@ -83,7 +84,7 @@ export const products: readonly Product[] = [
     art: "custom",
     name: "Custom & Bulk Orders",
     blurb:
-      "Weddings, return gifts and corporate hampers — pick your colours, your motifs and your quantity.",
+      "Weddings, return gifts and corporate hampers pick your colours, your motifs and your quantity.",
     price: "Let's talk",
     tags: ["Weddings", "Return gifts", "Corporate"],
     enquiry:
@@ -105,7 +106,7 @@ export const orderSteps = [
   {
     step: "03",
     title: "Painted & packed",
-    body: "Each piece is hand-painted, left to cure, then carefully packed and shipped across India.",
+    body: "Each piece is handpainted, left to cure, then carefully packed and shipped across India.",
   },
 ] as const;
 
@@ -113,7 +114,7 @@ export const values = [
   {
     icon: "brush",
     title: "Craftsmanship",
-    body: "Every single piece is painted by hand — never printed, never machine-stamped.",
+    body: "Every single piece is painted by hand never printed, never machine-stamped.",
   },
   {
     icon: "palette",
@@ -146,5 +147,4 @@ export const stats = [
   { value: 2001, suffix: "", label: "Painting since" },
   { value: 100, suffix: "%", label: "Hand-painted" },
   { value: 1, suffix: "", label: "Pair of hands" },
-  { value: 28, suffix: "+", label: "States we ship to" },
 ] as const;

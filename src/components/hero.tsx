@@ -1,7 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform, type Variants } from "motion/react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+  type Variants,
+} from "motion/react";
 import { DiyaArt, RangoliArt, WhatsAppIcon } from "@/components/art";
 import { EASE } from "@/components/motion/primitives";
 import { Chip, GhostLink, Magnetic, PrimaryLink } from "@/components/ui";
@@ -67,7 +73,11 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
         {/* ── Copy ─────────────────────────────────────────── */}
-        <motion.div style={{ y: reduce ? 0 : copyY }} initial="hidden" animate="visible">
+        <motion.div
+          style={{ y: reduce ? 0 : copyY }}
+          initial="hidden"
+          animate="visible"
+        >
           <motion.div
             variants={{ visible: { transition: { staggerChildren: 0.075 } } }}
             initial="hidden"
@@ -76,7 +86,7 @@ export function Hero() {
             <motion.div variants={softVariants} className="mb-6">
               <Chip className="bg-cream/80 backdrop-blur-sm">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-clay" />
-                Handmade at home since {site.since}
+                Handpainted at home since {site.since}
               </Chip>
             </motion.div>
 
@@ -86,7 +96,10 @@ export function Hero() {
                   {line.map((word) => {
                     const accent = word === "light" || word === "up";
                     return (
-                      <span key={word} className="inline-block overflow-hidden pb-[0.12em] align-bottom">
+                      <span
+                        key={word}
+                        className="inline-block overflow-hidden pb-[0.12em] align-bottom"
+                      >
                         <motion.span
                           variants={reduce ? softVariants : wordVariants}
                           className={
@@ -104,7 +117,11 @@ export function Hero() {
                               className="absolute -bottom-1 left-0 h-2.5 w-full text-teal-deep"
                               initial={{ pathLength: 0, opacity: 0 }}
                               animate={{ pathLength: 1, opacity: 1 }}
-                              transition={{ duration: 1, delay: 1.05, ease: EASE }}
+                              transition={{
+                                duration: 1,
+                                delay: 1.05,
+                                ease: EASE,
+                              }}
                             >
                               <motion.path
                                 d="M2 9 C50 2, 150 2, 198 7"
@@ -134,14 +151,19 @@ export function Hero() {
               variants={softVariants}
               className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg"
             >
-              {site.meaning} Every diya and rangoli is painted by one pair of hands — washable,
-              reusable, and made in the colours you ask for.
+              {site.meaning} Every diya and rangoli is painted by one pair of
+              hands — washable, reusable, and made in the colours you ask for.
             </motion.p>
 
-            <motion.div variants={softVariants} className="mt-9 flex flex-wrap items-center gap-3">
+            <motion.div
+              variants={softVariants}
+              className="mt-9 flex flex-wrap items-center gap-3"
+            >
               <Magnetic>
                 <PrimaryLink
-                  href={whatsappLink(`Hi ${site.name}! I'd like to place an order.`)}
+                  href={whatsappLink(
+                    `Hi ${site.name}! I'd like to place an order.`,
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   withArrow={false}
@@ -159,10 +181,24 @@ export function Hero() {
               variants={softVariants}
               className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-ink-soft"
             >
-              {["100% hand-painted", "Washable & reusable", "Ships across India"].map((item) => (
+              {[
+                "100% hand-painted",
+                "Washable & reusable",
+                "Ships across India",
+              ].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <svg viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-teal-deep" aria-hidden>
-                    <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.15" />
+                  <svg
+                    viewBox="0 0 20 20"
+                    className="h-4 w-4 shrink-0 text-teal-deep"
+                    aria-hidden
+                  >
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="9"
+                      fill="currentColor"
+                      opacity="0.15"
+                    />
                     <path
                       d="m6 10.4 2.6 2.6L14.2 7.4"
                       fill="none"
@@ -209,13 +245,20 @@ export function Hero() {
             >
               <motion.div
                 animate={reduce ? undefined : { y: [0, 9, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.6,
+                }}
                 className="rounded-2xl border border-clay/12 bg-cream/90 px-4 py-3 shadow-[0_18px_40px_-22px_rgba(58,31,18,0.65)] backdrop-blur-sm"
               >
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-soft">
                   Diyas from
                 </p>
-                <p className="font-display text-2xl font-semibold text-clay">₹80</p>
+                <p className="font-display text-2xl font-semibold text-clay">
+                  ₹80
+                </p>
               </motion.div>
             </motion.div>
 
@@ -227,15 +270,26 @@ export function Hero() {
             >
               <motion.div
                 animate={reduce ? undefined : { y: [0, -11, 0] }}
-                transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="flex items-center gap-2 rounded-full border border-clay/12 bg-cream/90 px-4 py-2.5 shadow-[0_18px_40px_-22px_rgba(58,31,18,0.65)] backdrop-blur-sm"
               >
                 <span className="flex -space-x-1.5">
-                  {["bg-clay", "bg-teal-deep", "bg-gold", "bg-terracotta"].map((c) => (
-                    <span key={c} className={`h-4 w-4 rounded-full ring-2 ring-cream ${c}`} />
-                  ))}
+                  {["bg-clay", "bg-teal-deep", "bg-gold", "bg-terracotta"].map(
+                    (c) => (
+                      <span
+                        key={c}
+                        className={`h-4 w-4 rounded-full ring-2 ring-cream ${c}`}
+                      />
+                    ),
+                  )}
                 </span>
-                <span className="text-xs font-semibold text-ink">Your colours</span>
+                <span className="text-xs font-semibold text-ink">
+                  Your colours
+                </span>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -256,7 +310,9 @@ export function Hero() {
           Scroll
           <span className="flex h-9 w-5 items-start justify-center rounded-full border border-clay/25 p-1">
             <motion.span
-              animate={reduce ? undefined : { y: [0, 12, 0], opacity: [1, 0.2, 1] }}
+              animate={
+                reduce ? undefined : { y: [0, 12, 0], opacity: [1, 0.2, 1] }
+              }
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="h-1.5 w-1.5 rounded-full bg-clay"
             />

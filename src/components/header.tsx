@@ -113,7 +113,7 @@ export function Header() {
             <span className="flex flex-col leading-none">
               <span className="font-display text-xl font-semibold tracking-tight text-clay-deep sm:text-2xl">
                 {site.name}
-                <span className="text-xs"> by Archana</span>
+                <span className="text-xs ml-1">by Archana</span>
               </span>
               <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.22em] text-ink-soft">
                 Since {site.since}
